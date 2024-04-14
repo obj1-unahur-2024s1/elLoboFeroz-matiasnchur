@@ -1,29 +1,24 @@
 object caperucitaRoja {
-    var peso = 60
-    method peso(){return peso + canasta.peso()}
+    method peso(){return 60 + canasta.peso()}
     method cruzarElBosque(){
     	canasta.quitarManzana(1)
     }
 }
 
 object abuelita {
-    var peso = 50
-    method peso() {return peso}
+    method peso() {return 50}
 }
 
 object manzana {
-	var peso = 0.2
-    method peso() {return peso}
+    method peso() {return 0.2}
 }
 
 object canasta {	
   var cantidadDeManzanas = 6
-  var peso = 1.2
   method cantidadDeManzanas(){return cantidadDeManzanas}
   method peso() {return cantidadDeManzanas * manzana.peso()}
   method quitarManzana(cantidad) {
   	cantidadDeManzanas = self.cantidadDeManzanas() - cantidad 
-  	peso = self.peso()
   }
 }
 
