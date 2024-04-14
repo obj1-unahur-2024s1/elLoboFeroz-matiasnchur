@@ -51,4 +51,38 @@ object loboFeroz {
     peso = self.peso() - 1
   }
   
+  method soplar(unaCasa){
+  	if(self.estaSaludable()){
+  		peso = self.peso() - (unaCasa.resistencia() + unaCasa.pesoDeOcupantes())
+  	}
+  }
+  
+}
+
+object chanchito{
+	method peso(){return 2}
+}
+
+object casaDePaja{
+	method resistencia(){return 0}
+	method pesoDeOcupantes(){
+		return 1 * chanchito.peso()
+	}
+}
+
+object casaDeMadera{
+	method resistencia(){return 5}
+	method pesoDeOcupantes(){
+		return 2 * chanchito.peso()
+	}
+}
+
+object casaDeLadrillos {
+    const resistenciaPorLadrillo = 2
+    const cantidadLadrillos = 3
+    
+    method resistencia() { return resistenciaPorLadrillo * cantidadLadrillos }
+   	method pesoDeOcupantes(){
+		return 3 * chanchito.peso()
+	}
 }
